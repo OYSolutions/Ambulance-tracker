@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/Ambulance_Service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hospital-management-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/route-optimization-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
