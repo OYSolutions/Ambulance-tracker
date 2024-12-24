@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ambulances")
+@RequestMapping("/api/ambulances")
 public class AmbulanceController {
 
     private final AmbulanceService ambulanceService;
@@ -35,7 +35,7 @@ public class AmbulanceController {
             return ResponseEntity.badRequest().build();
         }
         Ambulance created = ambulanceService.createAmbulance(ambulance);
-        return ResponseEntity.ok(created);
+        return ResponseEntity.status(201).body(created);
     }
 
     @PutMapping("/{id}")
@@ -44,9 +44,17 @@ public class AmbulanceController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    @PutMapping("/{id}/location")
+
+    @PatchMapping("/{id}/location")
     public ResponseEntity<Ambulance> updateAmbulanceLocation(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
         return ambulanceService.updateAmbulanceLocation(id, updatedAmbulance.getLatitude(), updatedAmbulance.getLongitude())
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PatchMapping("/{id}/availability")
+    public ResponseEntity<Ambulance> updateAmbulanceAvailability(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
+        return ambulanceService.updateAmbulanceAvailability(id, updatedAmbulance.isAvailable())
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -56,11 +64,4 @@ public class AmbulanceController {
         boolean deleted = ambulanceService.deleteAmbulance(id);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
-    @PutMapping("/{id}/availability")
-    public ResponseEntity<Ambulance> updateAmbulanceAvailability(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
-        return ambulanceService.updateAmbulanceAvailability(id, updatedAmbulance.isAvailable())
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
 }

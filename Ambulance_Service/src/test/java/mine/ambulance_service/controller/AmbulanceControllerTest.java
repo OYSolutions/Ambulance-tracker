@@ -39,9 +39,9 @@ class AmbulanceControllerTest {
         ambulance = new Ambulance();
         ambulance.setId(1L);
         ambulance.setDriverName("John Doe");
-        ambulance.setAvailable(true);
         ambulance.setLatitude(40.7128);
         ambulance.setLongitude(-74.0060);
+        ambulance.setAvailable(true);
     }
 
     @Test
@@ -69,9 +69,9 @@ class AmbulanceControllerTest {
 
     @Test
     void getAmbulanceById_WhenNotExists_ShouldReturnNotFound() throws Exception {
-        when(ambulanceService.getAmbulanceById(99L)).thenReturn(Optional.empty());
+        when(ambulanceService.getAmbulanceById(1L)).thenReturn(Optional.empty());
 
-        mockMvc.perform(get("/api/ambulances/99"))
+        mockMvc.perform(get("/api/ambulances/1"))
                 .andExpect(status().isNotFound());
     }
 
@@ -90,6 +90,8 @@ class AmbulanceControllerTest {
     @Test
     void updateAmbulance_WhenExists_ShouldReturnUpdatedAmbulance() throws Exception {
         Ambulance updatedAmbulance = new Ambulance();
+        updatedAmbulance.setId(1L);
+        updatedAmbulance.setDriverName("Jane Doe");
         updatedAmbulance.setAvailable(false);
         updatedAmbulance.setLatitude(41.8781);
         updatedAmbulance.setLongitude(-87.6298);
@@ -101,9 +103,21 @@ class AmbulanceControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(updatedAmbulance)))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.driverName").value("Jane Doe"))
                 .andExpect(jsonPath("$.available").value(false))
                 .andExpect(jsonPath("$.latitude").value(41.8781))
                 .andExpect(jsonPath("$.longitude").value(-87.6298));
+    }
+
+    @Test
+    void updateAmbulance_WhenNotExists_ShouldReturnNotFound() throws Exception {
+        when(ambulanceService.updateAmbulance(eq(99L), any(Ambulance.class)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(put("/api/ambulances/99")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(new Ambulance())))
+                .andExpect(status().isNotFound());
     }
 
     @Test
@@ -124,6 +138,21 @@ class AmbulanceControllerTest {
     }
 
     @Test
+    void updateAmbulanceLocation_WhenNotExists_ShouldReturnNotFound() throws Exception {
+        Ambulance locationUpdate = new Ambulance();
+        locationUpdate.setLatitude(41.8781);
+        locationUpdate.setLongitude(-87.6298);
+
+        when(ambulanceService.updateAmbulanceLocation(eq(1L), any(Double.class), any(Double.class)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(patch("/api/ambulances/1/location")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(locationUpdate)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
     void updateAmbulanceAvailability_WhenExists_ShouldReturnUpdatedAmbulance() throws Exception {
         Ambulance availabilityUpdate = new Ambulance();
         availabilityUpdate.setAvailable(false);
@@ -139,8 +168,32 @@ class AmbulanceControllerTest {
     }
 
     @Test
-    void deleteAmbulance_ShouldReturnNoContent() throws Exception {
+    void updateAmbulanceAvailability_WhenNotExists_ShouldReturnNotFound() throws Exception {
+        Ambulance availabilityUpdate = new Ambulance();
+        availabilityUpdate.setAvailable(false);
+
+        when(ambulanceService.updateAmbulanceAvailability(eq(1L), eq(false)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(patch("/api/ambulances/1/availability")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(availabilityUpdate)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void deleteAmbulance_WhenExists_ShouldReturnNoContent() throws Exception {
+        when(ambulanceService.deleteAmbulance(1L)).thenReturn(true);
+
         mockMvc.perform(delete("/api/ambulances/1"))
                 .andExpect(status().isNoContent());
+    }
+
+    @Test
+    void deleteAmbulance_WhenNotExists_ShouldReturnNotFound() throws Exception {
+        when(ambulanceService.deleteAmbulance(1L)).thenReturn(false);
+
+        mockMvc.perform(delete("/api/ambulances/1"))
+                .andExpect(status().isNotFound());
     }
 }

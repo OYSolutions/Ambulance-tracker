@@ -5,7 +5,7 @@ import mine.hospital_service.model.Hospital;
 import mine.hospital_service.service.HospitalService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +20,8 @@ public class HospitalController {
     }
 
     @GetMapping
-    public List<Hospital> getAllHospitals() {
-        return hospitalService.getAllHospitals();
+    public ResponseEntity<List<Hospital>> getAllHospitals() {
+        return ResponseEntity.ok(hospitalService.getAllHospitals());
     }
 
     @GetMapping("/{id}")
@@ -38,7 +38,7 @@ public class HospitalController {
             Hospital saved = hospitalService.createHospital(hospital);
             savedHospitals.add(saved);
         }
-        return ResponseEntity.ok(savedHospitals);
+        return ResponseEntity.status(201).body(savedHospitals);
     }
 
 
@@ -75,17 +75,18 @@ public class HospitalController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    @GetMapping(value = "/speciality", produces = "application/json")
-    public ResponseEntity<List<Hospital>> getHospitalsBySpeciality(@RequestParam(required = false) String speciality) {
+    @GetMapping(value = "/search", produces = "application/json")
+    public ResponseEntity<List<Hospital>> getHospitalsBySpeciality(@RequestParam String speciality) {
         return ResponseEntity.ok(hospitalService.findBySpeciality(speciality));
     }
-    @GetMapping(value = "by-hospital/{hospitalId}", produces = "application/json")
-    public List<AmbulanceDTO> getAmbulancesByHospital(@PathVariable Long hospitalId) {
-        return hospitalService.findByAmbulanceIds(hospitalId);
+    @GetMapping(value = "/{id}/ambulances", produces = "application/json")
+    public ResponseEntity<Map<Integer, Object>> getAmbulancesByHospital(@PathVariable Long hospitalId) {
+        Map<Integer, Object> ambulances = hospitalService.findByAmbulanceIds(hospitalId);
+        return ResponseEntity.ok(ambulances);
     }
 
     @GetMapping(value = "/specialities", produces = "application/json")
-    public List<String> getAllSpecialities() {
-        return hospitalService.getAllSpecialities();
+    public ResponseEntity<Set<String>> getAllSpecialities() {
+        return ResponseEntity.ok(new HashSet<>(hospitalService.getAllSpecialities()));
     }
 }

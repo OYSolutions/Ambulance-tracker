@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="mine.ambulance_service.controller.AmbulanceControllerTest" time="2.405" tests="12" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\test-classes;C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\classes;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.4\spring-boot-starter-data-jpa-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.4\spring-boot-starter-aop-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-aop\6.0.12\spring-aop-6.0.12.jar;C:\Users\mouad\.m2\repository\org\aspectj\aspectjweaver\1.9.20\aspectjweaver-1.9.20.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.4\spring-boot-starter-jdbc-3.1.4.jar;C:\Users\mouad\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-jdbc\6.0.12\spring-jdbc-6.0.12.jar;C:\Users\mouad\.m2\repository\org\hibernate\orm\hibernate-core\6.2.9.Final\hibernate-core-6.2.9.Final.jar;C:\Users\mouad\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\mouad\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\mouad\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\mouad\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\mouad\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\mouad\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\mouad\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\mouad\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\mouad\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\mouad\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\mouad\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\mouad\.m2\repository\org\springframework\data\spring-data-jpa\3.1.4\spring-data-jpa-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\data\spring-data-commons\3.1.4\spring-data-commons-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-orm\6.0.12\spring-orm-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-context\6.0.12\spring-context-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-tx\6.0.12\spring-tx-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-beans\6.0.12\spring-beans-6.0.12.jar;C:\Users\mouad\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\mouad\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-aspects\6.0.12\spring-aspects-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.4\spring-boot-starter-web-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.4\spring-boot-starter-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot\3.1.4\spring-boot-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.4\spring-boot-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.4\spring-boot-starter-logging-3.1.4.jar;C:\Users\mouad\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\mouad\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\mouad\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\mouad\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\mouad\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\mouad\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.4\spring-boot-starter-json-3.1.4.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.4\spring-boot-starter-tomcat-3.1.4.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.13\tomcat-embed-core-10.1.13.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.13\tomcat-embed-el-10.1.13.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.13\tomcat-embed-websocket-10.1.13.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-web\6.0.12\spring-web-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-webmvc\6.0.12\spring-webmvc-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-expression\6.0.12\spring-expression-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.1.4\spring-boot-starter-actuator-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.1.4\spring-boot-actuator-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-actuator\3.1.4\spring-boot-actuator-3.1.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-observation\1.11.4\micrometer-observation-1.11.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-commons\1.11.4\micrometer-commons-1.11.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-core\1.11.4\micrometer-core-1.11.4.jar;C:\Users\mouad\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\mouad\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\mouad\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\mouad\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter-netflix-eureka-client\4.0.3\spring-cloud-starter-netflix-eureka-client-4.0.3.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter\4.0.4\spring-cloud-starter-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-context\4.0.4\spring-cloud-context-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\security\spring-security-crypto\6.1.4\spring-security-crypto-6.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-commons\4.0.4\spring-cloud-commons-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\security\spring-security-rsa\1.0.12.RELEASE\spring-security-rsa-1.0.12.RELEASE.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.73\bcpkix-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.73\bcprov-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.73\bcutil-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-netflix-eureka-client\4.0.3\spring-cloud-netflix-eureka-client-4.0.3.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2.2\httpcore5-5.2.2.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2.2\httpcore5-h2-5.2.2.jar;C:\Users\mouad\.m2\repository\com\netflix\eureka\eureka-client\2.0.1\eureka-client-2.0.1.jar;C:\Users\mouad\.m2\repository\com\netflix\netflix-commons\netflix-eventbus\0.3.0\netflix-eventbus-0.3.0.jar;C:\Users\mouad\.m2\repository\com\netflix\netflix-commons\netflix-infix\0.3.0\netflix-infix-0.3.0.jar;C:\Users\mouad\.m2\repository\commons-jxpath\commons-jxpath\1.3\commons-jxpath-1.3.jar;C:\Users\mouad\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\mouad\.m2\repository\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;C:\Users\mouad\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;C:\Users\mouad\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\mouad\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\mouad\.m2\repository\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;C:\Users\mouad\.m2\repository\com\thoughtworks\xstream\xstream\1.4.19\xstream-1.4.19.jar;C:\Users\mouad\.m2\repository\io\github\x-stream\mxparser\1.2.2\mxparser-1.2.2.jar;C:\Users\mouad\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\mouad\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar;C:\Users\mouad\.m2\repository\com\netflix\servo\servo-core\0.12.21\servo-core-0.12.21.jar;C:\Users\mouad\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\mouad\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\mouad\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\mouad\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\mouad\.m2\repository\org\codehaus\jettison\jettison\1.4.0\jettison-1.4.0.jar;C:\Users\mouad\.m2\repository\com\netflix\eureka\eureka-core\2.0.1\eureka-core-2.0.1.jar;C:\Users\mouad\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar;C:\Users\mouad\.m2\repository\com\fasterxml\woodstox\woodstox-core\6.2.1\woodstox-core-6.2.1.jar;C:\Users\mouad\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.1\stax2-api-4.2.1.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter-loadbalancer\4.0.4\spring-cloud-starter-loadbalancer-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-loadbalancer\4.0.4\spring-cloud-loadbalancer-4.0.4.jar;C:\Users\mouad\.m2\repository\io\projectreactor\reactor-core\3.5.10\reactor-core-3.5.10.jar;C:\Users\mouad\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\mouad\.m2\repository\io\projectreactor\addons\reactor-extra\3.5.1\reactor-extra-3.5.1.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-cache\3.1.4\spring-boot-starter-cache-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-context-support\6.0.12\spring-context-support-6.0.12.jar;C:\Users\mouad\.m2\repository\com\stoyanr\evictor\1.0.0\evictor-1.0.0.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.4\spring-boot-starter-test-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-test\3.1.4\spring-boot-test-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.4\spring-boot-test-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\mouad\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\mouad\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\mouad\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\mouad\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\mouad\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\mouad\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\mouad\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\mouad\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\mouad\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\mouad\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\mouad\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\mouad\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\mouad\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\mouad\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\mouad\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\mouad\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-core\6.0.12\spring-core-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-jcl\6.0.12\spring-jcl-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-test\6.0.12\spring-test-6.0.12.jar;C:\Users\mouad\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\mouad\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Casablanca"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\mouad\AppData\Local\Temp\surefire18224955033170503961\surefirebooter-20241224221035018_3.jar C:\Users\mouad\AppData\Local\Temp\surefire18224955033170503961 2024-12-24T22-10-34_892-jvmRun1 surefire-20241224221035018_1tmp surefire_0-20241224221035018_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\test-classes;C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\classes;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.4\spring-boot-starter-data-jpa-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.4\spring-boot-starter-aop-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-aop\6.0.12\spring-aop-6.0.12.jar;C:\Users\mouad\.m2\repository\org\aspectj\aspectjweaver\1.9.20\aspectjweaver-1.9.20.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.4\spring-boot-starter-jdbc-3.1.4.jar;C:\Users\mouad\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-jdbc\6.0.12\spring-jdbc-6.0.12.jar;C:\Users\mouad\.m2\repository\org\hibernate\orm\hibernate-core\6.2.9.Final\hibernate-core-6.2.9.Final.jar;C:\Users\mouad\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\mouad\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\mouad\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\mouad\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\mouad\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\mouad\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\mouad\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\mouad\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\mouad\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\mouad\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\mouad\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\mouad\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\mouad\.m2\repository\org\springframework\data\spring-data-jpa\3.1.4\spring-data-jpa-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\data\spring-data-commons\3.1.4\spring-data-commons-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-orm\6.0.12\spring-orm-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-context\6.0.12\spring-context-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-tx\6.0.12\spring-tx-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-beans\6.0.12\spring-beans-6.0.12.jar;C:\Users\mouad\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\mouad\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-aspects\6.0.12\spring-aspects-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.4\spring-boot-starter-web-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.4\spring-boot-starter-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot\3.1.4\spring-boot-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.4\spring-boot-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.4\spring-boot-starter-logging-3.1.4.jar;C:\Users\mouad\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\mouad\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\mouad\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\mouad\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\mouad\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\mouad\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.4\spring-boot-starter-json-3.1.4.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.4\spring-boot-starter-tomcat-3.1.4.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.13\tomcat-embed-core-10.1.13.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.13\tomcat-embed-el-10.1.13.jar;C:\Users\mouad\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.13\tomcat-embed-websocket-10.1.13.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-web\6.0.12\spring-web-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-webmvc\6.0.12\spring-webmvc-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-expression\6.0.12\spring-expression-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.1.4\spring-boot-starter-actuator-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.1.4\spring-boot-actuator-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-actuator\3.1.4\spring-boot-actuator-3.1.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-observation\1.11.4\micrometer-observation-1.11.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-commons\1.11.4\micrometer-commons-1.11.4.jar;C:\Users\mouad\.m2\repository\io\micrometer\micrometer-core\1.11.4\micrometer-core-1.11.4.jar;C:\Users\mouad\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\mouad\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\mouad\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\mouad\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter-netflix-eureka-client\4.0.3\spring-cloud-starter-netflix-eureka-client-4.0.3.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter\4.0.4\spring-cloud-starter-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-context\4.0.4\spring-cloud-context-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\security\spring-security-crypto\6.1.4\spring-security-crypto-6.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-commons\4.0.4\spring-cloud-commons-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\security\spring-security-rsa\1.0.12.RELEASE\spring-security-rsa-1.0.12.RELEASE.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.73\bcpkix-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.73\bcprov-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.73\bcutil-jdk18on-1.73.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-netflix-eureka-client\4.0.3\spring-cloud-netflix-eureka-client-4.0.3.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2.2\httpcore5-5.2.2.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2.2\httpcore5-h2-5.2.2.jar;C:\Users\mouad\.m2\repository\com\netflix\eureka\eureka-client\2.0.1\eureka-client-2.0.1.jar;C:\Users\mouad\.m2\repository\com\netflix\netflix-commons\netflix-eventbus\0.3.0\netflix-eventbus-0.3.0.jar;C:\Users\mouad\.m2\repository\com\netflix\netflix-commons\netflix-infix\0.3.0\netflix-infix-0.3.0.jar;C:\Users\mouad\.m2\repository\commons-jxpath\commons-jxpath\1.3\commons-jxpath-1.3.jar;C:\Users\mouad\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\mouad\.m2\repository\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;C:\Users\mouad\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;C:\Users\mouad\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\mouad\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\mouad\.m2\repository\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;C:\Users\mouad\.m2\repository\com\thoughtworks\xstream\xstream\1.4.19\xstream-1.4.19.jar;C:\Users\mouad\.m2\repository\io\github\x-stream\mxparser\1.2.2\mxparser-1.2.2.jar;C:\Users\mouad\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\mouad\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar;C:\Users\mouad\.m2\repository\com\netflix\servo\servo-core\0.12.21\servo-core-0.12.21.jar;C:\Users\mouad\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\mouad\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\mouad\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\mouad\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\mouad\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\mouad\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\mouad\.m2\repository\org\codehaus\jettison\jettison\1.4.0\jettison-1.4.0.jar;C:\Users\mouad\.m2\repository\com\netflix\eureka\eureka-core\2.0.1\eureka-core-2.0.1.jar;C:\Users\mouad\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar;C:\Users\mouad\.m2\repository\com\fasterxml\woodstox\woodstox-core\6.2.1\woodstox-core-6.2.1.jar;C:\Users\mouad\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.1\stax2-api-4.2.1.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-starter-loadbalancer\4.0.4\spring-cloud-starter-loadbalancer-4.0.4.jar;C:\Users\mouad\.m2\repository\org\springframework\cloud\spring-cloud-loadbalancer\4.0.4\spring-cloud-loadbalancer-4.0.4.jar;C:\Users\mouad\.m2\repository\io\projectreactor\reactor-core\3.5.10\reactor-core-3.5.10.jar;C:\Users\mouad\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\mouad\.m2\repository\io\projectreactor\addons\reactor-extra\3.5.1\reactor-extra-3.5.1.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-cache\3.1.4\spring-boot-starter-cache-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-context-support\6.0.12\spring-context-support-6.0.12.jar;C:\Users\mouad\.m2\repository\com\stoyanr\evictor\1.0.0\evictor-1.0.0.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.4\spring-boot-starter-test-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-test\3.1.4\spring-boot-test-3.1.4.jar;C:\Users\mouad\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.4\spring-boot-test-autoconfigure-3.1.4.jar;C:\Users\mouad\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\mouad\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\mouad\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\mouad\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\mouad\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\mouad\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\mouad\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\mouad\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\mouad\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\mouad\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\mouad\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\mouad\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\mouad\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\mouad\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\mouad\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\mouad\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\mouad\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\mouad\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-core\6.0.12\spring-core-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-jcl\6.0.12\spring-jcl-6.0.12.jar;C:\Users\mouad\.m2\repository\org\springframework\spring-test\6.0.12\spring-test-6.0.12.jar;C:\Users\mouad\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\mouad\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\mouad"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-10-17"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\mouad\AppData\Local\Temp\surefire18224955033170503961\surefirebooter-20241224221035018_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.1+12-LTS-29"/>
+    <property name="user.name" value="mouad"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\mouad\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\mouad\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.1"/>
+    <property name="user.dir" value="C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="50684"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Python38\Scripts\;C:\Program Files\Python38\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-17.0.11\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\mouad\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\mouad\AppData\Local\Programs\Python\Python312\;C:\Users\mouad\AppData\Local\Microsoft\WindowsApps;C:\Users\mouad\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mouad\.dotnet\tools;C:\Program Files\Java\jdk-21\bin;C:\Users\mouad\AppData\Local\Pub\Cache\bin;D:\pro\Flutter config sdk\flutter\bin;D:\pro\Flutter config sdk\flutter;C:\Users\mouad\AppData\Local\Android\Sdk\emulator;C:\Program Files\Apache\Maven\apache-maven-3.9.7\bin;C:\Users\mouad\AppData\Local\Android\Sdk\emulator;C:\Users\mouad\AppData\Local\Android\Sdk\tools;C:\Users\mouad\AppData\Local\Android\Sdk\tools\bin;C:\Users\mouad\AppData\Local\Android\Sdk\tools;C:\Users\mouad\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-17.0.11\bin;C:\Program Files\sonarqube-10.7.0.96327\bin\;C:\Program Files\sonar-scanner-6.2.1.4610-windows-x64\bin;C:\Users\mouad\AppData\Roaming\npm;C:\users\mouad\Downloads\chromedriver-win32;C:\Program Files\JetBrains\PyCharm 2024.3\bin;;D:\Program Files\PostgreSQL\16\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.1\bin;;C:\Users\mouad\Desktop\apache-jmeter-5.6.3\bin;D:\Program Files\Windsurf\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.1+12-LTS-29"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="updateAmbulanceLocation_WhenExists_ShouldReturnUpdatedAmbulance" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.423">
+    <system-out><![CDATA[2024-12-24T22:10:47.957+01:00 DEBUG 50684 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [AmbulanceControllerTest]: using SpringBootContextLoader
+2024-12-24T22:10:47.958+01:00 DEBUG 50684 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [mine.ambulance_service.controller.AmbulanceControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-12-24T22:10:47.958+01:00  INFO 50684 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [mine.ambulance_service.controller.AmbulanceControllerTest]: AmbulanceControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-24T22:10:47.974+01:00 DEBUG 50684 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using ContextCustomizers for test class [AmbulanceControllerTest]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+2024-12-24T22:10:47.981+01:00 DEBUG 50684 --- [           main] ssPathScanningCandidateComponentProvider : Identified candidate component class: file [C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\classes\mine\ambulance_service\AmbulanceServiceApplication.class]
+2024-12-24T22:10:47.982+01:00  INFO 50684 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration mine.ambulance_service.AmbulanceServiceApplication for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:47.983+01:00 DEBUG 50684 --- [           main] .s.t.c.u.TestContextSpringFactoriesUtils : Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2024-12-24T22:10:47.983+01:00 DEBUG 50684 --- [           main] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners for test class [AmbulanceControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+2024-12-24T22:10:47.983+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test class: class [AmbulanceControllerTest], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2024-12-24T22:10:49.029+01:00  INFO 50684 --- [           main] m.a.controller.AmbulanceControllerTest   : Starting AmbulanceControllerTest using Java 21.0.1 with PID 50684 (started by mouad in C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service)
+2024-12-24T22:10:49.029+01:00  INFO 50684 --- [           main] m.a.controller.AmbulanceControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2024-12-24T22:10:49.029+01:00 DEBUG 50684 --- [           main] o.s.boot.SpringApplication               : Loading source class mine.ambulance_service.AmbulanceServiceApplication
+2024-12-24T22:10:49.032+01:00 DEBUG 50684 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@13331927
+2024-12-24T22:10:49.033+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-12-24T22:10:49.033+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-12-24T22:10:49.048+01:00 DEBUG 50684 --- [           main] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [C:\Users\mouad\Desktop\git project tests\Ambulance-tracker\Ambulance_Service\target\classes\mine\ambulance_service\controller\AmbulanceController.class]
+2024-12-24T22:10:49.122+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.context.ImportsContextCustomizer$ImportsCleanupPostProcessor'
+2024-12-24T22:10:49.124+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-12-24T22:10:49.272+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-12-24T22:10:49.273+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2024-12-24T22:10:49.275+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-12-24T22:10:49.281+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-12-24T22:10:49.286+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-12-24T22:10:49.288+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-12-24T22:10:49.289+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-12-24T22:10:49.290+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2024-12-24T22:10:49.290+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2024-12-24T22:10:49.294+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'projectingArgumentResolverBeanPostProcessor'
+2024-12-24T22:10:49.295+01:00 DEBUG 50684 --- [           main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@6c90ff73]
+2024-12-24T22:10:49.298+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'ambulanceServiceApplication'
+2024-12-24T22:10:49.306+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'ambulanceController'
+2024-12-24T22:10:49.326+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'ambulanceController' via constructor to bean named 'mine.ambulance_service.service.AmbulanceService#0'
+2024-12-24T22:10:49.329+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2024-12-24T22:10:49.330+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration'
+2024-12-24T22:10:49.332+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+2024-12-24T22:10:49.333+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter'
+2024-12-24T22:10:49.338+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties'
+2024-12-24T22:10:49.359+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2024-12-24T22:10:49.362+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'taskExecutorBuilder'
+2024-12-24T22:10:49.364+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2024-12-24T22:10:49.370+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2024-12-24T22:10:49.373+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+2024-12-24T22:10:49.374+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'error'
+2024-12-24T22:10:49.375+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'beanNameViewResolver'
+2024-12-24T22:10:49.377+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+2024-12-24T22:10:49.380+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-12-24T22:10:49.386+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.386+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-12-24T22:10:49.387+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-12-24T22:10:49.400+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+2024-12-24T22:10:49.401+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-12-24T22:10:49.413+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-12-24T22:10:49.414+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'errorAttributes'
+2024-12-24T22:10:49.415+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'basicErrorController'
+2024-12-24T22:10:49.418+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+2024-12-24T22:10:49.421+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'errorPageCustomizer'
+2024-12-24T22:10:49.422+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dispatcherServletPath'
+2024-12-24T22:10:49.422+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration'
+2024-12-24T22:10:49.423+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration' via constructor to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.423+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-12-24T22:10:49.425+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletPath'
+2024-12-24T22:10:49.426+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2024-12-24T22:10:49.427+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-12-24T22:10:49.427+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-12-24T22:10:49.427+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@44cbc1fe'
+2024-12-24T22:10:49.432+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+2024-12-24T22:10:49.434+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-12-24T22:10:49.435+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-12-24T22:10:49.435+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@44cbc1fe'
+2024-12-24T22:10:49.437+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.web.config.SpringDataWebConfiguration'
+2024-12-24T22:10:49.438+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.data.web.config.SpringDataWebConfiguration' via constructor to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.440+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+2024-12-24T22:10:49.441+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.443+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcConversionService'
+2024-12-24T22:10:49.451+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcValidator'
+2024-12-24T22:10:49.455+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.455+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.455+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2024-12-24T22:10:49.456+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'messageConverters'
+2024-12-24T22:10:49.457+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+2024-12-24T22:10:49.459+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'stringHttpMessageConverter'
+2024-12-24T22:10:49.459+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+2024-12-24T22:10:49.460+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'environment'
+2024-12-24T22:10:49.465+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+2024-12-24T22:10:49.466+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+2024-12-24T22:10:49.468+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jacksonObjectMapper'
+2024-12-24T22:10:49.468+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+2024-12-24T22:10:49.470+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+2024-12-24T22:10:49.472+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+2024-12-24T22:10:49.472+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+2024-12-24T22:10:49.474+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2024-12-24T22:10:49.493+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2024-12-24T22:10:49.494+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'parameterNamesModule'
+2024-12-24T22:10:49.494+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+2024-12-24T22:10:49.496+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonMixinModule'
+2024-12-24T22:10:49.497+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonMixinConfiguration'
+2024-12-24T22:10:49.498+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonMixinModuleEntries'
+2024-12-24T22:10:49.498+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModuleEntries' via factory method to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.498+01:00 DEBUG 50684 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'mine.ambulance_service'. Automatic @Repository and @Entity scanning is enabled.
+2024-12-24T22:10:49.506+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModule' via factory method to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.506+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModule' via factory method to bean named 'jsonMixinModuleEntries'
+2024-12-24T22:10:49.507+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonComponentModule'
+2024-12-24T22:10:49.508+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+2024-12-24T22:10:49.513+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jacksonGeoModule'
+2024-12-24T22:10:49.515+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration'
+2024-12-24T22:10:49.517+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.518+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+2024-12-24T22:10:49.520+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+2024-12-24T22:10:49.524+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+2024-12-24T22:10:49.532+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sortResolver'
+2024-12-24T22:10:49.534+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sortCustomizer'
+2024-12-24T22:10:49.534+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration'
+2024-12-24T22:10:49.535+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'
+2024-12-24T22:10:49.538+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration' via constructor to bean named 'spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'
+2024-12-24T22:10:49.540+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'pageableResolver'
+2024-12-24T22:10:49.540+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'pageableCustomizer'
+2024-12-24T22:10:49.543+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'applicationTaskExecutor'
+2024-12-24T22:10:49.544+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+2024-12-24T22:10:49.545+01:00 DEBUG 50684 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-24T22:10:49.551+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-24T22:10:49.552+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+2024-12-24T22:10:49.553+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.554+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.554+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.554+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.563+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'welcomePageNotAcceptableHandlerMapping'
+2024-12-24T22:10:49.564+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageNotAcceptableHandlerMapping' via factory method to bean named 'org.springframework.web.context.support.GenericWebApplicationContext@13331927'
+2024-12-24T22:10:49.564+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageNotAcceptableHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.564+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageNotAcceptableHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.571+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'localeResolver'
+2024-12-24T22:10:49.572+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'themeResolver'
+2024-12-24T22:10:49.574+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'flashMapManager'
+2024-12-24T22:10:49.575+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+2024-12-24T22:10:49.575+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.577+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.577+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.591+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2024-12-24T22:10:49.592+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcPatternParser'
+2024-12-24T22:10:49.592+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcUrlPathHelper'
+2024-12-24T22:10:49.593+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcPathMatcher'
+2024-12-24T22:10:49.594+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+2024-12-24T22:10:49.595+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.595+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.596+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'beanNameHandlerMapping'
+2024-12-24T22:10:49.596+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.596+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.598+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'routerFunctionMapping'
+2024-12-24T22:10:49.599+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.599+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.602+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'resourceHandlerMapping'
+2024-12-24T22:10:49.603+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.603+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.603+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-12-24T22:10:49.604+01:00 DEBUG 50684 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-24T22:10:49.605+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+2024-12-24T22:10:49.605+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'handlerFunctionAdapter'
+2024-12-24T22:10:49.606+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+2024-12-24T22:10:49.607+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+2024-12-24T22:10:49.607+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+2024-12-24T22:10:49.608+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+2024-12-24T22:10:49.608+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+2024-12-24T22:10:49.608+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'handlerExceptionResolver'
+2024-12-24T22:10:49.609+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.610+01:00 DEBUG 50684 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-24T22:10:49.612+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcViewResolver'
+2024-12-24T22:10:49.612+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2024-12-24T22:10:49.613+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewNameTranslator'
+2024-12-24T22:10:49.614+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'defaultViewResolver'
+2024-12-24T22:10:49.616+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewResolver'
+2024-12-24T22:10:49.617+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@44cbc1fe'
+2024-12-24T22:10:49.619+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewResolver'
+2024-12-24T22:10:49.620+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestContextFilter'
+2024-12-24T22:10:49.621+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2024-12-24T22:10:49.621+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'formContentFilter'
+2024-12-24T22:10:49.623+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration'
+2024-12-24T22:10:49.624+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'gsonBuilder'
+2024-12-24T22:10:49.626+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'standardGsonBuilderCustomizer'
+2024-12-24T22:10:49.627+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.gson-org.springframework.boot.autoconfigure.gson.GsonProperties'
+2024-12-24T22:10:49.632+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'standardGsonBuilderCustomizer' via factory method to bean named 'spring.gson-org.springframework.boot.autoconfigure.gson.GsonProperties'
+2024-12-24T22:10:49.633+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'gsonBuilder' via factory method to bean named 'standardGsonBuilderCustomizer'
+2024-12-24T22:10:49.635+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'gson'
+2024-12-24T22:10:49.636+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'gson' via factory method to bean named 'gsonBuilder'
+2024-12-24T22:10:49.638+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+2024-12-24T22:10:49.639+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.GsonHttpMessageConvertersConfiguration'
+2024-12-24T22:10:49.640+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.web.config.ProjectingArgumentResolverRegistrar'
+2024-12-24T22:10:49.640+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+2024-12-24T22:10:49.640+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-12-24T22:10:49.642+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'characterEncodingFilter'
+2024-12-24T22:10:49.644+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+2024-12-24T22:10:49.645+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mockMvcBuilder'
+2024-12-24T22:10:49.646+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'springBootMockMvcBuilderCustomizer'
+2024-12-24T22:10:49.655+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mockMvcBuilder' via factory method to bean named 'springBootMockMvcBuilderCustomizer'
+2024-12-24T22:10:49.682+01:00 DEBUG 50684 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-12-24T22:10:49.683+01:00 DEBUG 50684 --- [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: 
+2024-12-24T22:10:49.695+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mockMvc'
+2024-12-24T22:10:49.696+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mockMvc' via factory method to bean named 'mockMvcBuilder'
+2024-12-24T22:10:49.704+01:00  INFO 50684 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-24T22:10:49.705+01:00  INFO 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-24T22:10:49.705+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Detected AcceptHeaderLocaleResolver
+2024-12-24T22:10:49.705+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Detected FixedThemeResolver
+2024-12-24T22:10:49.706+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2965d07c
+2024-12-24T22:10:49.707+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Detected org.springframework.web.servlet.support.SessionFlashMapManager@13878c50
+2024-12-24T22:10:49.707+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-24T22:10:49.710+01:00  INFO 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-24T22:10:49.714+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dispatcherServlet'
+2024-12-24T22:10:49.715+01:00 DEBUG 50684 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'mockMvc'
+2024-12-24T22:10:49.728+01:00 DEBUG 50684 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-12-24T22:10:49.728+01:00 DEBUG 50684 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-12-24T22:10:49.732+01:00 DEBUG 50684 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   AutoServiceRegistrationConfiguration matched:
+      - @ConditionalOnProperty (spring.cloud.service-registry.auto-registration.enabled) matched (OnPropertyCondition)
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   GsonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'com.google.gson.Gson' (OnClassCondition)
+
+   GsonAutoConfiguration#gson matched:
+      - @ConditionalOnMissingBean (types: com.google.gson.Gson; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   GsonAutoConfiguration#gsonBuilder matched:
+      - @ConditionalOnMissingBean (types: com.google.gson.GsonBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   GsonHttpMessageConvertersConfiguration matched:
+      - @ConditionalOnClass found required class 'com.google.gson.Gson' (OnClassCondition)
+
+   HttpEncodingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (server.servlet.encoding.enabled) matched (OnPropertyCondition)
+
+   HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter' (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule' (OnClassCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+      - @ConditionalOnProperty (spring.mvc.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedMappingJackson2HttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+
+   MockMvcAutoConfiguration#dispatcherServlet matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#dispatcherServletPath matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvc matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvc; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvcBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvcBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration NONE cache type (CacheCondition)
+
+   SpringDataWebAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.data.web.PageableHandlerMethodArgumentResolver', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.PageableHandlerMethodArgumentResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringDataWebAutoConfiguration#pageableCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.config.PageableHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringDataWebAutoConfiguration#sortCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.config.SortHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+   TaskExecutionAutoConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration#taskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.TaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.filter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#themeResolver matched:
+      - @ConditionalOnMissingBean (names: themeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   Cache2kCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.cache2k.Cache2kBuilder' (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) did not find any beans of type org.springframework.web.servlet.DispatcherServlet (OnBeanCondition)
+
+   FreeMarkerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'freemarker.template.Configuration' (OnClassCondition)
+
+   GenericCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration unknown cache type (CacheCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration.GsonHttpMessageConverterConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.JacksonJsonbUnavailable NoneNestedConditions 1 matched 1 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JsonbPreferred @ConditionalOnProperty (spring.mvc.converters.preferred-json-mapper=jsonb) did not find property 'spring.mvc.converters.preferred-json-mapper'; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JacksonAvailable @ConditionalOnBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) found bean 'mappingJackson2HttpMessageConverter'; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.GsonPreferred @ConditionalOnProperty (spring.mvc.converters.preferred-json-mapper=gson) did not find property 'spring.mvc.converters.preferred-json-mapper' (GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.hateoas.EntityModel' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MockMvcAutoConfiguration.WebTestClientMockMvcConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   MockMvcSecurityConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors' (OnClassCondition)
+
+   MockMvcWebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.gargoylesoftware.htmlunit.WebClient' (OnClassCondition)
+
+   MockMvcWebDriverAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.openqa.selenium.htmlunit.HtmlUnitDriver' (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+
+   OAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   OAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.oauth2.server.resource.authentication.BearerTokenAuthenticationToken' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   SecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher' (OnClassCondition)
+
+   SecurityFilterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+
+   SimpleCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration unknown cache type (CacheCondition)
+
+   ThymeleafAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.thymeleaf.spring6.SpringTemplateEngine' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+   ValidationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.validation.executable.ExecutableValidator' (OnClassCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.hiddenmethod.filter.enabled) did not find property 'enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.problemdetails.enabled=true) did not find property 'enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+   WebTestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-12-24T22:10:49.735+01:00  INFO 50684 --- [           main] m.a.controller.AmbulanceControllerTest   : Started AmbulanceControllerTest in 1.747 seconds (process running for 14.604)
+2024-12-24T22:10:49.736+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 2]
+2024-12-24T22:10:49.738+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:49.738+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 2]
+2024-12-24T22:10:49.744+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 2]
+2024-12-24T22:10:49.749+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulanceLocation_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:49.751+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 2]
+2024-12-24T22:10:49.751+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 16, missCount = 2]
+2024-12-24T22:10:49.755+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 17, missCount = 2]
+2024-12-24T22:10:49.872+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PATCH "/api/ambulances/1/location", parameters={}
+2024-12-24T22:10:49.890+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulanceLocation(Long, Ambulance)
+2024-12-24T22:10:49.981+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=null, driverName=null, available=false, latitude=41.8781, longitude=-87.6298)]
+2024-12-24T22:10:50.021+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.022+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Ambulance(id=null, driverName=null, available=false, latitude=41.8781, longitude=-87.6298)]
+2024-12-24T22:10:50.024+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 200 OK
+2024-12-24T22:10:50.167+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 18, missCount = 2]
+2024-12-24T22:10:50.168+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 19, missCount = 2]
+2024-12-24T22:10:50.168+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 20, missCount = 2]
+2024-12-24T22:10:50.168+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 21, missCount = 2]
+2024-12-24T22:10:50.169+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 22, missCount = 2]
+2024-12-24T22:10:50.170+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 23, missCount = 2]
+2024-12-24T22:10:50.170+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulanceLocation_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="updateAmbulance_WhenExists_ShouldReturnUpdatedAmbulance" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.015">
+    <system-out><![CDATA[2024-12-24T22:10:50.173+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 24, missCount = 2]
+2024-12-24T22:10:50.174+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.174+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 25, missCount = 2]
+2024-12-24T22:10:50.175+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 26, missCount = 2]
+2024-12-24T22:10:50.177+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulance_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.177+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 27, missCount = 2]
+2024-12-24T22:10:50.178+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 28, missCount = 2]
+2024-12-24T22:10:50.180+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 29, missCount = 2]
+2024-12-24T22:10:50.182+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PUT "/api/ambulances/1", parameters={}
+2024-12-24T22:10:50.183+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulance(Long, Ambulance)
+2024-12-24T22:10:50.185+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=1, driverName=Jane Doe, available=false, latitude=41.8781, longitude=-87.6298)]
+2024-12-24T22:10:50.187+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.187+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Ambulance(id=1, driverName=Jane Doe, available=false, latitude=41.8781, longitude=-87.6298)]
+2024-12-24T22:10:50.187+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 200 OK
+2024-12-24T22:10:50.189+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 30, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 31, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 32, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 33, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 34, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 35, missCount = 2]
+2024-12-24T22:10:50.190+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulance_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="deleteAmbulance_WhenNotExists_ShouldReturnNotFound" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.013">
+    <system-out><![CDATA[2024-12-24T22:10:50.192+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 36, missCount = 2]
+2024-12-24T22:10:50.192+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.192+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 37, missCount = 2]
+2024-12-24T22:10:50.192+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 38, missCount = 2]
+2024-12-24T22:10:50.195+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [deleteAmbulance_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.195+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 39, missCount = 2]
+2024-12-24T22:10:50.196+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 40, missCount = 2]
+2024-12-24T22:10:50.196+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 41, missCount = 2]
+2024-12-24T22:10:50.198+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : DELETE "/api/ambulances/1", parameters={}
+2024-12-24T22:10:50.198+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#deleteAmbulance(Long)
+2024-12-24T22:10:50.202+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.203+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.203+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 404 NOT_FOUND
+2024-12-24T22:10:50.203+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 42, missCount = 2]
+2024-12-24T22:10:50.204+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 43, missCount = 2]
+2024-12-24T22:10:50.204+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 44, missCount = 2]
+2024-12-24T22:10:50.204+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 45, missCount = 2]
+2024-12-24T22:10:50.204+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 46, missCount = 2]
+2024-12-24T22:10:50.205+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 47, missCount = 2]
+2024-12-24T22:10:50.206+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [deleteAmbulance_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="updateAmbulanceAvailability_WhenExists_ShouldReturnUpdatedAmbulance" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.014">
+    <system-out><![CDATA[2024-12-24T22:10:50.208+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 48, missCount = 2]
+2024-12-24T22:10:50.208+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.208+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 49, missCount = 2]
+2024-12-24T22:10:50.209+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 50, missCount = 2]
+2024-12-24T22:10:50.210+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulanceAvailability_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.211+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 51, missCount = 2]
+2024-12-24T22:10:50.211+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 52, missCount = 2]
+2024-12-24T22:10:50.212+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 53, missCount = 2]
+2024-12-24T22:10:50.215+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PATCH "/api/ambulances/1/availability", parameters={}
+2024-12-24T22:10:50.215+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulanceAvailability(Long, Ambulance)
+2024-12-24T22:10:50.217+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=null, driverName=null, available=false, latitude=null, longitude=null)]
+2024-12-24T22:10:50.218+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.219+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Ambulance(id=null, driverName=null, available=false, latitude=null, longitude=null)]
+2024-12-24T22:10:50.219+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 200 OK
+2024-12-24T22:10:50.221+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 54, missCount = 2]
+2024-12-24T22:10:50.221+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 55, missCount = 2]
+2024-12-24T22:10:50.221+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 56, missCount = 2]
+2024-12-24T22:10:50.221+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 57, missCount = 2]
+2024-12-24T22:10:50.222+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 58, missCount = 2]
+2024-12-24T22:10:50.223+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 59, missCount = 2]
+2024-12-24T22:10:50.223+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulanceAvailability_WhenExists_ShouldReturnUpdatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="getAmbulanceById_WhenNotExists_ShouldReturnNotFound" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.013">
+    <system-out><![CDATA[2024-12-24T22:10:50.225+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 60, missCount = 2]
+2024-12-24T22:10:50.225+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.226+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 61, missCount = 2]
+2024-12-24T22:10:50.230+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 62, missCount = 2]
+2024-12-24T22:10:50.232+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [getAmbulanceById_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.232+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 63, missCount = 2]
+2024-12-24T22:10:50.233+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 64, missCount = 2]
+2024-12-24T22:10:50.234+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 65, missCount = 2]
+2024-12-24T22:10:50.236+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : GET "/api/ambulances/1", parameters={}
+2024-12-24T22:10:50.237+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#getAmbulanceById(Long)
+2024-12-24T22:10:50.239+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.240+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.240+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 404 NOT_FOUND
+2024-12-24T22:10:50.241+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 66, missCount = 2]
+2024-12-24T22:10:50.241+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 67, missCount = 2]
+2024-12-24T22:10:50.241+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 68, missCount = 2]
+2024-12-24T22:10:50.241+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 69, missCount = 2]
+2024-12-24T22:10:50.242+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 70, missCount = 2]
+2024-12-24T22:10:50.243+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 71, missCount = 2]
+2024-12-24T22:10:50.243+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [getAmbulanceById_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="createAmbulance_ShouldReturnCreatedAmbulance" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.011">
+    <system-out><![CDATA[2024-12-24T22:10:50.246+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 72, missCount = 2]
+2024-12-24T22:10:50.246+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.246+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 73, missCount = 2]
+2024-12-24T22:10:50.247+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 74, missCount = 2]
+2024-12-24T22:10:50.248+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [createAmbulance_ShouldReturnCreatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.249+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 75, missCount = 2]
+2024-12-24T22:10:50.249+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 76, missCount = 2]
+2024-12-24T22:10:50.250+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 77, missCount = 2]
+2024-12-24T22:10:50.251+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : POST "/api/ambulances", parameters={}
+2024-12-24T22:10:50.253+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#createAmbulance(Ambulance)
+2024-12-24T22:10:50.254+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=1, driverName=John Doe, available=true, latitude=40.7128, longitude=-74.006)]
+2024-12-24T22:10:50.255+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.256+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Ambulance(id=1, driverName=John Doe, available=true, latitude=40.7128, longitude=-74.006)]
+2024-12-24T22:10:50.256+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 201 CREATED
+2024-12-24T22:10:50.257+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 78, missCount = 2]
+2024-12-24T22:10:50.258+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 79, missCount = 2]
+2024-12-24T22:10:50.258+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 80, missCount = 2]
+2024-12-24T22:10:50.258+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 81, missCount = 2]
+2024-12-24T22:10:50.258+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 82, missCount = 2]
+2024-12-24T22:10:50.259+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 83, missCount = 2]
+2024-12-24T22:10:50.259+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [createAmbulance_ShouldReturnCreatedAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="updateAmbulanceLocation_WhenNotExists_ShouldReturnNotFound" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.012">
+    <system-out><![CDATA[2024-12-24T22:10:50.260+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 84, missCount = 2]
+2024-12-24T22:10:50.260+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.260+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 85, missCount = 2]
+2024-12-24T22:10:50.261+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 86, missCount = 2]
+2024-12-24T22:10:50.262+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulanceLocation_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.263+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 87, missCount = 2]
+2024-12-24T22:10:50.263+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 88, missCount = 2]
+2024-12-24T22:10:50.264+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 89, missCount = 2]
+2024-12-24T22:10:50.266+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PATCH "/api/ambulances/1/location", parameters={}
+2024-12-24T22:10:50.268+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulanceLocation(Long, Ambulance)
+2024-12-24T22:10:50.269+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=null, driverName=null, available=false, latitude=41.8781, longitude=-87.6298)]
+2024-12-24T22:10:50.270+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.270+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.270+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 404 NOT_FOUND
+2024-12-24T22:10:50.272+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 90, missCount = 2]
+2024-12-24T22:10:50.272+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 91, missCount = 2]
+2024-12-24T22:10:50.272+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 92, missCount = 2]
+2024-12-24T22:10:50.272+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 93, missCount = 2]
+2024-12-24T22:10:50.273+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 94, missCount = 2]
+2024-12-24T22:10:50.273+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 95, missCount = 2]
+2024-12-24T22:10:50.274+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulanceLocation_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="deleteAmbulance_WhenExists_ShouldReturnNoContent" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.008">
+    <system-out><![CDATA[2024-12-24T22:10:50.275+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 96, missCount = 2]
+2024-12-24T22:10:50.275+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.275+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 97, missCount = 2]
+2024-12-24T22:10:50.276+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 98, missCount = 2]
+2024-12-24T22:10:50.277+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [deleteAmbulance_WhenExists_ShouldReturnNoContent], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.277+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 99, missCount = 2]
+2024-12-24T22:10:50.277+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 100, missCount = 2]
+2024-12-24T22:10:50.278+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 101, missCount = 2]
+2024-12-24T22:10:50.279+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : DELETE "/api/ambulances/1", parameters={}
+2024-12-24T22:10:50.279+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#deleteAmbulance(Long)
+2024-12-24T22:10:50.280+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.280+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.280+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 204 NO_CONTENT
+2024-12-24T22:10:50.281+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 102, missCount = 2]
+2024-12-24T22:10:50.281+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 103, missCount = 2]
+2024-12-24T22:10:50.281+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 104, missCount = 2]
+2024-12-24T22:10:50.281+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 105, missCount = 2]
+2024-12-24T22:10:50.282+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 106, missCount = 2]
+2024-12-24T22:10:50.283+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 107, missCount = 2]
+2024-12-24T22:10:50.284+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [deleteAmbulance_WhenExists_ShouldReturnNoContent], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="updateAmbulance_WhenNotExists_ShouldReturnNotFound" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.011">
+    <system-out><![CDATA[2024-12-24T22:10:50.284+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 108, missCount = 2]
+2024-12-24T22:10:50.284+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.284+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 109, missCount = 2]
+2024-12-24T22:10:50.286+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 110, missCount = 2]
+2024-12-24T22:10:50.287+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulance_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.288+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 111, missCount = 2]
+2024-12-24T22:10:50.288+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 112, missCount = 2]
+2024-12-24T22:10:50.289+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 113, missCount = 2]
+2024-12-24T22:10:50.291+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PUT "/api/ambulances/99", parameters={}
+2024-12-24T22:10:50.292+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulance(Long, Ambulance)
+2024-12-24T22:10:50.293+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=null, driverName=null, available=false, latitude=null, longitude=null)]
+2024-12-24T22:10:50.293+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.293+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.294+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 404 NOT_FOUND
+2024-12-24T22:10:50.295+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 114, missCount = 2]
+2024-12-24T22:10:50.295+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 115, missCount = 2]
+2024-12-24T22:10:50.295+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 116, missCount = 2]
+2024-12-24T22:10:50.295+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 117, missCount = 2]
+2024-12-24T22:10:50.295+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 118, missCount = 2]
+2024-12-24T22:10:50.296+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 119, missCount = 2]
+2024-12-24T22:10:50.298+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulance_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="getAmbulanceById_WhenExists_ShouldReturnAmbulance" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.016">
+    <system-out><![CDATA[2024-12-24T22:10:50.300+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 120, missCount = 2]
+2024-12-24T22:10:50.301+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.302+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 121, missCount = 2]
+2024-12-24T22:10:50.302+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 122, missCount = 2]
+2024-12-24T22:10:50.304+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [getAmbulanceById_WhenExists_ShouldReturnAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.304+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 123, missCount = 2]
+2024-12-24T22:10:50.304+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 124, missCount = 2]
+2024-12-24T22:10:50.305+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 125, missCount = 2]
+2024-12-24T22:10:50.307+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : GET "/api/ambulances/1", parameters={}
+2024-12-24T22:10:50.307+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#getAmbulanceById(Long)
+2024-12-24T22:10:50.310+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.310+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Ambulance(id=1, driverName=John Doe, available=true, latitude=40.7128, longitude=-74.006)]
+2024-12-24T22:10:50.310+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 200 OK
+2024-12-24T22:10:50.315+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 126, missCount = 2]
+2024-12-24T22:10:50.316+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 127, missCount = 2]
+2024-12-24T22:10:50.317+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 128, missCount = 2]
+2024-12-24T22:10:50.317+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 129, missCount = 2]
+2024-12-24T22:10:50.318+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 130, missCount = 2]
+2024-12-24T22:10:50.319+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 131, missCount = 2]
+2024-12-24T22:10:50.319+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [getAmbulanceById_WhenExists_ShouldReturnAmbulance], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="getAllAmbulances_ShouldReturnListOfAmbulances" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.019">
+    <system-out><![CDATA[2024-12-24T22:10:50.321+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 132, missCount = 2]
+2024-12-24T22:10:50.321+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.321+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 133, missCount = 2]
+2024-12-24T22:10:50.322+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 134, missCount = 2]
+2024-12-24T22:10:50.323+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [getAllAmbulances_ShouldReturnListOfAmbulances], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.323+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 135, missCount = 2]
+2024-12-24T22:10:50.323+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 136, missCount = 2]
+2024-12-24T22:10:50.325+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 137, missCount = 2]
+2024-12-24T22:10:50.327+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : GET "/api/ambulances", parameters={}
+2024-12-24T22:10:50.327+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#getAllAmbulances()
+2024-12-24T22:10:50.333+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.333+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Ambulance(id=1, driverName=John Doe, available=true, latitude=40.7128, longitude=-74.006)]]
+2024-12-24T22:10:50.336+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 200 OK
+2024-12-24T22:10:50.339+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 138, missCount = 2]
+2024-12-24T22:10:50.339+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 139, missCount = 2]
+2024-12-24T22:10:50.339+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 140, missCount = 2]
+2024-12-24T22:10:50.340+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 141, missCount = 2]
+2024-12-24T22:10:50.340+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 142, missCount = 2]
+2024-12-24T22:10:50.341+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 143, missCount = 2]
+2024-12-24T22:10:50.341+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [getAllAmbulances_ShouldReturnListOfAmbulances], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="updateAmbulanceAvailability_WhenNotExists_ShouldReturnNotFound" classname="mine.ambulance_service.controller.AmbulanceControllerTest" time="0.01">
+    <system-out><![CDATA[2024-12-24T22:10:50.342+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 144, missCount = 2]
+2024-12-24T22:10:50.343+01:00 DEBUG 50684 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class mine.ambulance_service.controller.AmbulanceControllerTest
+2024-12-24T22:10:50.343+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 145, missCount = 2]
+2024-12-24T22:10:50.344+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 146, missCount = 2]
+2024-12-24T22:10:50.345+01:00 DEBUG 50684 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [AmbulanceControllerTest], method [updateAmbulanceAvailability_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-12-24T22:10:50.346+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 147, missCount = 2]
+2024-12-24T22:10:50.346+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 148, missCount = 2]
+2024-12-24T22:10:50.347+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 149, missCount = 2]
+2024-12-24T22:10:50.349+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : PATCH "/api/ambulances/1/availability", parameters={}
+2024-12-24T22:10:50.350+01:00 DEBUG 50684 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to mine.ambulance_service.controller.AmbulanceController#updateAmbulanceAvailability(Long, Ambulance)
+2024-12-24T22:10:50.351+01:00 DEBUG 50684 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Ambulance(id=null, driverName=null, available=false, latitude=null, longitude=null)]
+2024-12-24T22:10:50.352+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-24T22:10:50.352+01:00 DEBUG 50684 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-12-24T22:10:50.352+01:00 DEBUG 50684 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed 404 NOT_FOUND
+2024-12-24T22:10:50.353+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 150, missCount = 2]
+2024-12-24T22:10:50.353+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 151, missCount = 2]
+2024-12-24T22:10:50.353+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 152, missCount = 2]
+2024-12-24T22:10:50.353+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 153, missCount = 2]
+2024-12-24T22:10:50.354+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 154, missCount = 2]
+2024-12-24T22:10:50.355+01:00 DEBUG 50684 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1f9f550e size = 2, maxSize = 32, parentContextCount = 0, hitCount = 155, missCount = 2]
+2024-12-24T22:10:50.355+01:00 DEBUG 50684 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [AmbulanceControllerTest], method [updateAmbulanceAvailability_WhenNotExists_ShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+</testsuite>

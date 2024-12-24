@@ -1,12 +1,14 @@
 package mine.hospital_service.service;
 
+import mine.hospital_service.dto.AmbulanceDTO;
 import mine.hospital_service.model.Hospital;
 import mine.hospital_service.repository.HospitalRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -14,18 +16,20 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 class HospitalServiceTest {
 
     @Mock
     private HospitalRepository hospitalRepository;
 
     @Mock
-    private WebClient webClient;
+    private WebClient.Builder webClientBuilder;
 
     @Mock
-    private WebClient.Builder webClientBuilder;
+    private WebClient webClient;
 
     @Mock
     private WebClient.RequestHeadersUriSpec requestHeadersUriSpec;
@@ -43,11 +47,6 @@ class HospitalServiceTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
-        
-        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-        when(webClientBuilder.build()).thenReturn(webClient);
-        
         hospital = new Hospital();
         hospital.setId(1);
         hospital.setName("Test Hospital");
@@ -56,162 +55,174 @@ class HospitalServiceTest {
         hospital.setAddress("123 Test St");
         hospital.setSpeciality("General");
         hospital.setAvailable(true);
-        hospital.setAmbulanceIds(new ArrayList<>());
+        hospital.setAmbulanceIds(Arrays.asList(1, 2));
+
+        when(webClientBuilder.build()).thenReturn(webClient);
+        when(webClient.get()).thenReturn(requestHeadersUriSpec);
+        when(requestHeadersUriSpec.uri(any(String.class))).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
     }
 
     @Test
-    void getAllHospitals_ShouldReturnListOfHospitals() {
-        // Arrange
-        List<Hospital> expectedHospitals = Arrays.asList(hospital);
-        when(hospitalRepository.findAll()).thenReturn(expectedHospitals);
+    void getAllHospitals_ShouldReturnAllHospitals() {
+        when(hospitalRepository.findAll()).thenReturn(Arrays.asList(hospital));
 
-        // Act
-        List<Hospital> actualHospitals = hospitalService.getAllHospitals();
+        List<Hospital> result = hospitalService.getAllHospitals();
 
-        // Assert
-        assertEquals(expectedHospitals, actualHospitals);
-        verify(hospitalRepository).findAll();
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals("Test Hospital", result.get(0).getName());
     }
 
     @Test
     void getHospitalById_WhenExists_ShouldReturnHospital() {
-        // Arrange
-        when(hospitalRepository.findById(1L)).thenReturn(Optional.of(hospital));
+        when(hospitalRepository.findById(1)).thenReturn(Optional.of(hospital));
 
-        // Act
-        Optional<Hospital> result = hospitalService.getHospitalById(1L);
+        Optional<Hospital> result = hospitalService.getHospitalById(1);
 
-        // Assert
         assertTrue(result.isPresent());
-        assertEquals(hospital, result.get());
+        assertEquals("Test Hospital", result.get().getName());
     }
 
     @Test
     void getHospitalById_WhenNotExists_ShouldReturnEmpty() {
-        // Arrange
-        when(hospitalRepository.findById(99L)).thenReturn(Optional.empty());
+        when(hospitalRepository.findById(99)).thenReturn(Optional.empty());
 
-        // Act
-        Optional<Hospital> result = hospitalService.getHospitalById(99L);
+        Optional<Hospital> result = hospitalService.getHospitalById(99);
 
-        // Assert
         assertFalse(result.isPresent());
     }
 
     @Test
-    void createHospital_ShouldReturnSavedHospital() {
-        // Arrange
+    void createHospital_ShouldReturnCreatedHospital() {
         when(hospitalRepository.save(any(Hospital.class))).thenReturn(hospital);
 
-        // Act
-        Hospital savedHospital = hospitalService.createHospital(hospital);
+        Hospital result = hospitalService.createHospital(hospital);
 
-        // Assert
-        assertNotNull(savedHospital);
-        assertEquals(hospital, savedHospital);
-        verify(hospitalRepository).save(hospital);
+        assertNotNull(result);
+        assertEquals("Test Hospital", result.getName());
+        assertEquals("General", result.getSpeciality());
+        assertTrue(result.isAvailable());
     }
 
     @Test
     void updateHospital_WhenExists_ShouldReturnUpdatedHospital() {
-        // Arrange
         Hospital updatedHospital = new Hospital();
+        updatedHospital.setId(1);
         updatedHospital.setName("Updated Hospital");
+        updatedHospital.setLatitude(40.7128);
+        updatedHospital.setLongitude(-74.0060);
+        updatedHospital.setAddress("456 Updated St");
+        updatedHospital.setSpeciality("Emergency");
         updatedHospital.setAvailable(false);
-        
-        when(hospitalRepository.findById(1L)).thenReturn(Optional.of(hospital));
+        updatedHospital.setAmbulanceIds(Arrays.asList(3, 4));
+
+        when(hospitalRepository.findById(1)).thenReturn(Optional.of(hospital));
         when(hospitalRepository.save(any(Hospital.class))).thenReturn(updatedHospital);
 
-        // Act
-        Optional<Hospital> result = hospitalService.updateHospital(1L, updatedHospital);
+        Optional<Hospital> result = hospitalService.updateHospital(1, updatedHospital);
 
-        // Assert
         assertTrue(result.isPresent());
         assertEquals("Updated Hospital", result.get().getName());
+        assertEquals("Emergency", result.get().getSpeciality());
         assertFalse(result.get().isAvailable());
     }
 
     @Test
     void updateHospital_WhenNotExists_ShouldReturnEmpty() {
-        // Arrange
-        when(hospitalRepository.findById(99L)).thenReturn(Optional.empty());
+        when(hospitalRepository.findById(99)).thenReturn(Optional.empty());
 
-        // Act
-        Optional<Hospital> result = hospitalService.updateHospital(99L, new Hospital());
+        Optional<Hospital> result = hospitalService.updateHospital(99, new Hospital());
 
-        // Assert
         assertFalse(result.isPresent());
     }
 
     @Test
-    void deleteHospital_ShouldCallRepositoryDelete() {
-        // Arrange
-        when(hospitalRepository.findById(1L)).thenReturn(Optional.of(hospital));
+    void deleteHospital_WhenExists_ShouldReturnTrue() {
+        when(hospitalRepository.existsById(1)).thenReturn(true);
+        doNothing().when(hospitalRepository).deleteById(1);
 
-        // Act
-        hospitalService.deleteHospital(1L);
+        boolean result = hospitalService.deleteHospital(1);
 
-        // Assert
-        verify(hospitalRepository).delete(hospital);
+        assertTrue(result);
+        verify(hospitalRepository).deleteById(1);
     }
 
     @Test
-    void addAmbulanceToHospital_WhenHospitalExists_ShouldAddAmbulance() {
-        // Arrange
-        when(hospitalRepository.findById(1L)).thenReturn(Optional.of(hospital));
+    void deleteHospital_WhenNotExists_ShouldReturnFalse() {
+        when(hospitalRepository.existsById(99)).thenReturn(false);
+
+        boolean result = hospitalService.deleteHospital(99);
+
+        assertFalse(result);
+        verify(hospitalRepository, never()).deleteById(anyInt());
+    }
+
+    @Test
+    void addAmbulanceToHospital_WhenSuccess_ShouldReturnUpdatedHospital() {
+        Hospital existingHospital = new Hospital();
+        existingHospital.setId(1);
+        existingHospital.setAmbulanceIds(new ArrayList<>());
+
+        when(hospitalRepository.findById(1)).thenReturn(Optional.of(existingHospital));
         when(hospitalRepository.save(any(Hospital.class))).thenReturn(hospital);
 
-        // Mock WebClient behavior
-        when(webClient.get()).thenReturn(requestHeadersUriSpec);
-        when(requestHeadersUriSpec.uri(anyString())).thenReturn(requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-        when(responseSpec.bodyToMono(Map.class)).thenReturn(Mono.just(new HashMap<>()));
+        Optional<Hospital> result = hospitalService.addAmbulanceToHospital(1, 1);
 
-        // Act
-        Optional<Hospital> result = hospitalService.addAmbulanceToHospital(1L, 1);
-
-        // Assert
         assertTrue(result.isPresent());
         assertTrue(result.get().getAmbulanceIds().contains(1));
     }
 
     @Test
-    void removeAmbulanceFromHospital_WhenHospitalExists_ShouldRemoveAmbulance() {
-        // Arrange
-        hospital.getAmbulanceIds().add(1);
-        when(hospitalRepository.findById(1L)).thenReturn(Optional.of(hospital));
+    void removeAmbulanceFromHospital_WhenSuccess_ShouldReturnUpdatedHospital() {
+        when(hospitalRepository.findById(1)).thenReturn(Optional.of(hospital));
         when(hospitalRepository.save(any(Hospital.class))).thenReturn(hospital);
 
-        // Act
-        Optional<Hospital> result = hospitalService.removeAmbulanceFromHospital(1L, 1);
+        Optional<Hospital> result = hospitalService.removeAmbulanceFromHospital(1, 1);
 
-        // Assert
         assertTrue(result.isPresent());
         assertFalse(result.get().getAmbulanceIds().contains(1));
     }
 
     @Test
     void getAllSpecialities_ShouldReturnUniqueSpecialities() {
-        // Arrange
-        List<Hospital> hospitals = Arrays.asList(
-            createHospitalWithSpeciality("Cardiology"),
-            createHospitalWithSpeciality("Neurology"),
-            createHospitalWithSpeciality("Cardiology")
-        );
-        when(hospitalRepository.findAll()).thenReturn(hospitals);
+        Hospital hospital2 = new Hospital();
+        hospital2.setSpeciality("Emergency");
 
-        // Act
-        Set<String> specialities = hospitalService.getAllSpecialities();
+        when(hospitalRepository.findAll()).thenReturn(Arrays.asList(hospital, hospital2));
 
-        // Assert
-        assertEquals(2, specialities.size());
-        assertTrue(specialities.contains("Cardiology"));
-        assertTrue(specialities.contains("Neurology"));
+        Set<String> result = hospitalService.getAllSpecialities();
+
+        assertEquals(2, result.size());
+        assertTrue(result.contains("General"));
+        assertTrue(result.contains("Emergency"));
     }
 
-    private Hospital createHospitalWithSpeciality(String speciality) {
-        Hospital hospital = new Hospital();
-        hospital.setSpeciality(speciality);
-        return hospital;
+    @Test
+    void findBySpeciality_ShouldReturnFilteredHospitals() {
+        when(hospitalRepository.findBySpeciality("General")).thenReturn(Arrays.asList(hospital));
+
+        List<Hospital> result = hospitalService.findBySpeciality("General");
+
+        assertEquals(1, result.size());
+        assertEquals("General", result.get(0).getSpeciality());
+    }
+
+    @Test
+    void findByAmbulanceIds_WhenAmbulanceExists_ShouldReturnAmbulanceDetails() {
+        AmbulanceDTO ambulance = new AmbulanceDTO();
+        ambulance.setId(1);
+        ambulance.setDriverName("John Doe");
+        ambulance.setAvailable(true);
+
+        when(responseSpec.bodyToMono(AmbulanceDTO.class))
+                .thenReturn(Mono.just(ambulance));
+
+        Map<Integer, Object> result = hospitalService.findByAmbulanceIds(1);
+
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey(1));
+        assertTrue(result.containsKey(2));
     }
 }

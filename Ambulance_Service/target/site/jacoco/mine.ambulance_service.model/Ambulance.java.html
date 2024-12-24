@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ambulance.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambulance_Service</a> &gt; <a href="index.source.html" class="el_package">mine.ambulance_service.model</a> &gt; <span class="el_source">Ambulance.java</span></div><h1>Ambulance.java</h1><pre class="source lang-java linenums">package mine.ambulance_service.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+<span class="pc bpc" id="L7" title="41 of 42 branches missed.">@Data</span>
+@Table(name = &quot;ambulances&quot;)
+public class Ambulance {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String driverName;
+
+    @Column(nullable = false)
+    private boolean available;
+
+    @Column(nullable = false)
+    private Double latitude;
+
+    @Column(nullable = false)
+    private Double longitude;
+
+    public Long getId() {
+<span class="fc" id="L27">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L31">        this.id = id;</span>
+<span class="fc" id="L32">    }</span>
+
+    public String getDriverName() {
+<span class="fc" id="L35">        return driverName;</span>
+    }
+
+    public void setDriverName(String name) {
+<span class="fc" id="L39">        this.driverName = name;</span>
+<span class="fc" id="L40">    }</span>
+
+    public boolean isAvailable() {
+<span class="fc" id="L43">        return available;</span>
+    }
+
+    public void setAvailable(boolean available) {
+<span class="fc" id="L47">        this.available = available;</span>
+<span class="fc" id="L48">    }</span>
+
+    public Double getLatitude() {
+<span class="fc" id="L51">        return latitude;</span>
+    }
+
+    public void setLatitude(Double latitude) {
+<span class="fc" id="L55">        this.latitude = latitude;</span>
+<span class="fc" id="L56">    }</span>
+
+    public Double getLongitude() {
+<span class="fc" id="L59">        return longitude;</span>
+    }
+
+    public void setLongitude(Double longitude) {
+<span class="fc" id="L63">        this.longitude = longitude;</span>
+<span class="fc" id="L64">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

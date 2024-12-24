@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AmbulanceController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambulance_Service</a> &gt; <a href="index.source.html" class="el_package">mine.ambulance_service.controller</a> &gt; <span class="el_source">AmbulanceController.java</span></div><h1>AmbulanceController.java</h1><pre class="source lang-java linenums">package mine.ambulance_service.controller;
+
+import mine.ambulance_service.model.Ambulance;
+import mine.ambulance_service.service.AmbulanceService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/ambulances&quot;)
+public class AmbulanceController {
+
+    private final AmbulanceService ambulanceService;
+
+<span class="fc" id="L16">    public AmbulanceController(AmbulanceService ambulanceService) {</span>
+<span class="fc" id="L17">        this.ambulanceService = ambulanceService;</span>
+<span class="fc" id="L18">    }</span>
+
+    @GetMapping
+    public List&lt;Ambulance&gt; getAllAmbulances() {
+<span class="fc" id="L22">        return ambulanceService.getAllAmbulances();</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Ambulance&gt; getAmbulanceById(@PathVariable Long id) {
+<span class="fc" id="L27">        return ambulanceService.getAmbulanceById(id)</span>
+<span class="fc" id="L28">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L29">                .orElse(ResponseEntity.notFound().build());</span>
+    }
+
+    @PostMapping
+    public ResponseEntity&lt;Ambulance&gt; createAmbulance(@RequestBody Ambulance ambulance) {
+<span class="pc bpc" id="L34" title="2 of 4 branches missed.">        if (ambulance.getLatitude() == null || ambulance.getLongitude() == null) {</span>
+<span class="nc" id="L35">            return ResponseEntity.badRequest().build();</span>
+        }
+<span class="fc" id="L37">        Ambulance created = ambulanceService.createAmbulance(ambulance);</span>
+<span class="fc" id="L38">        return ResponseEntity.status(201).body(created);</span>
+    }
+
+    @PutMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Ambulance&gt; updateAmbulance(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
+<span class="fc" id="L43">        return ambulanceService.updateAmbulance(id, updatedAmbulance)</span>
+<span class="fc" id="L44">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L45">                .orElse(ResponseEntity.notFound().build());</span>
+    }
+
+    @PatchMapping(&quot;/{id}/location&quot;)
+    public ResponseEntity&lt;Ambulance&gt; updateAmbulanceLocation(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
+<span class="fc" id="L50">        return ambulanceService.updateAmbulanceLocation(id, updatedAmbulance.getLatitude(), updatedAmbulance.getLongitude())</span>
+<span class="fc" id="L51">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L52">                .orElse(ResponseEntity.notFound().build());</span>
+    }
+
+    @PatchMapping(&quot;/{id}/availability&quot;)
+    public ResponseEntity&lt;Ambulance&gt; updateAmbulanceAvailability(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
+<span class="fc" id="L57">        return ambulanceService.updateAmbulanceAvailability(id, updatedAmbulance.isAvailable())</span>
+<span class="fc" id="L58">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L59">                .orElse(ResponseEntity.notFound().build());</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteAmbulance(@PathVariable Long id) {
+<span class="fc" id="L64">        boolean deleted = ambulanceService.deleteAmbulance(id);</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,7 @@
+mine\ambulance_service\AmbulanceServiceApplication.class
+mine\ambulance_service\controller\AmbulanceController.class
+mine\ambulance_service\config\DataInitializer.class
+mine\ambulance_service\config\SwaggerConfig.class
+mine\ambulance_service\model\Ambulance.class
+mine\ambulance_service\repository\AmbulanceRepository.class
+mine\ambulance_service\service\AmbulanceService.class

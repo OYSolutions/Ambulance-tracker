@@ -60,8 +60,7 @@ public class AmbulanceService {
         return ambulanceRepository.findById(Math.toIntExact(id))
                 .map(existingAmbulance -> {
                     existingAmbulance.setAvailable(available);
-                    ambulanceRepository.save(existingAmbulance);
-                    return existingAmbulance;
+                    return ambulanceRepository.save(existingAmbulance);
                 });
     }
 
