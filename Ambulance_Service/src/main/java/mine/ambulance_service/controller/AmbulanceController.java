@@ -56,4 +56,11 @@ public class AmbulanceController {
         boolean deleted = ambulanceService.deleteAmbulance(id);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
+    @PutMapping("/{id}/availability")
+    public ResponseEntity<Ambulance> updateAmbulanceAvailability(@PathVariable Long id, @RequestBody Ambulance updatedAmbulance) {
+        return ambulanceService.updateAmbulanceAvailability(id, updatedAmbulance.isAvailable())
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }

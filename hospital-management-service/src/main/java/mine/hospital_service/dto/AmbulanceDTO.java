@@ -6,6 +6,8 @@ public class AmbulanceDTO {
     private Double latitude;
     private Double longitude;
 
+    private String driverName;
+
     public AmbulanceDTO() {}
 
     public Integer getId() {
@@ -38,5 +40,13 @@ public class AmbulanceDTO {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
     }
 }

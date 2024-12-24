@@ -34,7 +34,8 @@ public class AmbulanceService {
                     existingAmbulance.setAvailable(updatedAmbulance.isAvailable());
                     existingAmbulance.setLatitude(updatedAmbulance.getLatitude());
                     existingAmbulance.setLongitude(updatedAmbulance.getLongitude());
-                    existingAmbulance.setName(updatedAmbulance.getName());
+                    existingAmbulance.setDriverName(updatedAmbulance.getDriverName());
+                    existingAmbulance.setId(updatedAmbulance.getId());
                     return ambulanceRepository.save(existingAmbulance);
                 });
     }
@@ -54,4 +55,14 @@ public class AmbulanceService {
                     return true;
                 }).orElse(false);
     }
+
+    public Optional<Ambulance> updateAmbulanceAvailability(Long id, boolean available) {
+        return ambulanceRepository.findById(Math.toIntExact(id))
+                .map(existingAmbulance -> {
+                    existingAmbulance.setAvailable(available);
+                    ambulanceRepository.save(existingAmbulance);
+                    return existingAmbulance;
+                });
+    }
+
 }

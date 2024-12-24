@@ -24,6 +24,12 @@ public class Hospital {
     @Column(nullable = false)
     private boolean available;
 
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
+    private String speciality;
+
     @ElementCollection
     @CollectionTable(name = "hospital_ambulances", joinColumns = @JoinColumn(name = "hospital_id"))
     @Column(name = "ambulance_id")
@@ -75,5 +81,21 @@ public class Hospital {
 
     public void setAmbulanceIds(List<Integer> ambulanceIds) {
         this.ambulanceIds = ambulanceIds;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 }

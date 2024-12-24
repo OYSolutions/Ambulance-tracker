@@ -8,6 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class HospitalService {
@@ -25,7 +26,7 @@ public class HospitalService {
         return hospitalRepository.findAll();
     }
 
-    public Optional<Hospital> getHospitalById(Integer id) {
+    public Optional<Hospital> getHospitalById(Long id) {
         return hospitalRepository.findById(id);
     }
 
@@ -33,7 +34,7 @@ public class HospitalService {
         return hospitalRepository.save(hospital);
     }
 
-    public Optional<Hospital> updateHospital(Integer id, Hospital updatedHospital) {
+    public Optional<Hospital> updateHospital(Long id, Hospital updatedHospital) {
         return hospitalRepository.findById(id)
                 .map(existingHospital -> {
                     existingHospital.setName(updatedHospital.getName());
@@ -41,11 +42,13 @@ public class HospitalService {
                     existingHospital.setLongitude(updatedHospital.getLongitude());
                     existingHospital.setAvailable(updatedHospital.isAvailable());
                     existingHospital.setAmbulanceIds(updatedHospital.getAmbulanceIds());
+                    existingHospital.setAddress(updatedHospital.getAddress());
+                    existingHospital.setSpeciality(updatedHospital.getSpeciality());
                     return hospitalRepository.save(existingHospital);
                 });
     }
 
-    public boolean deleteHospital(Integer id) {
+    public boolean deleteHospital(Long id) {
         return hospitalRepository.findById(id)
                 .map(hospital -> {
                     hospitalRepository.delete(hospital);
@@ -53,7 +56,7 @@ public class HospitalService {
                 }).orElse(false);
     }
 
-    public Optional<Hospital> addAmbulanceToHospital(Integer hospitalId, Integer ambulanceId) {
+    public Optional<Hospital> addAmbulanceToHospital(Long hospitalId, Integer ambulanceId) {
         return hospitalRepository.findById(hospitalId)
                 .map(hospital -> {
                     if (!hospital.getAmbulanceIds().contains(ambulanceId)) {
@@ -64,7 +67,7 @@ public class HospitalService {
                 });
     }
 
-    public Optional<Hospital> removeAmbulanceFromHospital(Integer hospitalId, Integer ambulanceId) {
+    public Optional<Hospital> removeAmbulanceFromHospital(Long hospitalId, Integer ambulanceId) {
         return hospitalRepository.findById(hospitalId)
                 .map(hospital -> {
                     hospital.getAmbulanceIds().remove(ambulanceId);
@@ -87,5 +90,29 @@ public class HospitalService {
             System.err.println("Error fetching ambulance details: " + e.getMessage());
             return Optional.empty();
         }
+    }
+
+    public List<Hospital> findBySpeciality(String speciality) {
+        if (speciality == null || speciality.trim().isEmpty()) {
+            throw new IllegalArgumentException("Speciality must not be null or empty.");
+        }
+        return hospitalRepository.findBySpecialityCaseInsensitive(speciality.trim());
+    }
+
+
+    public List<AmbulanceDTO> findByAmbulanceIds(Long hospitalId) {
+        return hospitalRepository.findById(hospitalId)
+                .map(hospital -> {
+                    return hospital.getAmbulanceIds().stream()
+                            .map(ambulanceId -> fetchAmbulanceDetails(ambulanceId).orElse(null))
+                            .toList();
+                }).orElse(List.of());
+    }
+
+    public List<String> getAllSpecialities() {
+        return hospitalRepository.findAll().stream()
+                .map(Hospital::getSpeciality)
+                .distinct()
+                .collect(Collectors.toList());
     }
 }

@@ -12,7 +12,7 @@ public class Ambulance {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String driverName;
 
     @Column(nullable = false)
     private boolean available;
@@ -31,12 +31,12 @@ public class Ambulance {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDriverName() {
+        return driverName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDriverName(String name) {
+        this.driverName = name;
     }
 
     public boolean isAvailable() {
